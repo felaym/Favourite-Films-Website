@@ -1,0 +1,118 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.85rem;
+  max-width: 50rem;
+  width: 100%;
+  z-index: 2;
+  font-family: "Courier New", monospace;
+}
+
+.description a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.description p {
+  position: relative;
+  margin: 0;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(200, 200, 200, 0.3);
+  border-radius: 0.5rem;
+}
+
+.code {
+  font-weight: 700;
+  font-family: "Courier New", monospace;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(25%, auto));
+  justify-content: space-around;
+  width: 50rem;
+  max-width: 100%;
+}
+
+.card {
+  padding: 1rem 1.2rem;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(200, 200, 200, 0.2);
+  transition: background 200ms, border 200ms;
+  margin: 1.5rem;
+}
+
+.card:hover {
+  background: rgb(47, 62, 47);
+}
+
+.card span {
+  display: inline-block;
+  transition: transform 200ms;
+}
+
+.card:hover span {
+  transform: translateX(0.25rem);
+}
+
+.card:hover a {
+  color: inherit !important;
+}
+
+.thirteen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.6875rem;
+  height: 4.6875rem;
+  padding: 1.5625rem 0.625rem;
+  margin-left: 1rem;
+  transform: translateZ(0);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0px 2px 8px -1px rgba(0, 0, 0, 0.1);
+}
+
+.thirteen::after {
+  inset: 0;
+  padding: 1px;
+  border-radius: 0.5rem;
+  background: linear-gradient(to bottom right, #ff7eb3, #ff758c);
+  background-clip: content-box;
+}
+
+@media (max-width: 43.75rem) {
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 20rem;
+    text-align: center;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .thirteen img {
+    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
